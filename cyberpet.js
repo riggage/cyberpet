@@ -1,6 +1,11 @@
+const nameOfPet = document.getElementById(`name`);
+const typeOfPet = document.getElementById(`petType`);
+const input = document.querySelector(`input`);
+
 class Animal{
-    constructor(name){
+    constructor(name, petType){
     this._name = name;
+    this._petType = petType
     this._hunger = 50;
     this._thirst = 50;
     this._boredom = 50
@@ -70,15 +75,22 @@ class Animal{
 }
 
 class Dog extends Animal{
-    constructor(name, loveWalk){
+    constructor(name){
         super(name)
-        this._loveWalks = loveWalk
-    }
-    get lovesWalks(){
-        return this._loveWalks
+        this._petType = "Dog"
     }
 }
 
-const bruce = new Dog("Bruce", true)
+class Snake extends Animal{
+    constructor(name){
+        super(name)
+        this._petType = "Snake"
+    }
+}
 
-console.log(bruce)
+class Goat extends Animal{
+    constructor(name){
+        super(name)
+        this._petType = "Goat"
+    }
+}
