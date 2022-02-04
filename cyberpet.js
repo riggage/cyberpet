@@ -1,5 +1,5 @@
-const namePet = document.getElementById("name").value;
-const petType = document.getElementById("petType").value;
+const namePet = document.getElementById("name");
+const petType = document.getElementById("petType");
 const input = document.querySelector("input");
 const createPet = document.getElementById("createPet")
 
