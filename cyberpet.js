@@ -1,6 +1,17 @@
-const nameOfPet = document.getElementById(`name`);
-const typeOfPet = document.getElementById(`petType`);
-const input = document.querySelector(`input`);
+const namePet = document.getElementById("name").value;
+const petType = document.getElementById("petType").value;
+const input = document.querySelector("input");
+const createPet = document.getElementById("createPet")
+
+createPet.addEventListener(`click`, () =>{
+    if (petType = "Dog"){
+        namePet = new Dog;
+    }   else if (petType = "Snake") {
+        namePet = new Snake;
+    } else if (petType = "Goat") {
+        namePet = new Goat;
+    }
+})
 
 class Animal{
     constructor(name, petType){
@@ -8,11 +19,14 @@ class Animal{
     this._petType = petType
     this._hunger = 50;
     this._thirst = 50;
-    this._boredom = 50
+    this._happiness = 50
     this._energy = 50
     }
     get name(){
     return this._name;
+    }
+    get petType(){
+        return this._petType
     }
     get hunger(){
     return this._hunger;
@@ -21,12 +35,12 @@ class Animal{
     return this._thirst;
     }
     get boredom(){
-        return this._boredom
+        return this._happiness
     }
     get energy(){
         return this._energy
     }
-    eat() {
+    feed(){
         this._hunger-=30;
         this._thirst+=5;
         this._energy+=30;
@@ -55,7 +69,7 @@ class Animal{
         this._energy-=30;
         this._happiness+=30;
         if (this._energy==0) {
-            console.log(`${this._name} passed out...`);
+            console.log(`${this._name} has passed out`);
         } else {
             console.log(`${this._name} is playing!`);
             console.log(`${this._name}'s happiness level is ${this._happiness}`);
